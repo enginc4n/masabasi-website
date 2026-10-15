@@ -18,7 +18,7 @@ Open [the local preview](http://localhost:8765/?v=20261015).
 
 The desktop hero uses a 43:57 column split. Below 900px, the hero, About, and Membership sections stack; benefits become two columns and events become two columns. Below 600px, benefits and events become single columns. Responsive gutters keep content inset at every size.
 
-Motion uses Web Animations and IntersectionObserver with a 110ms hero stagger, 500–610ms durations, and individual, once-only scroll reveals. Content and navigation remain visible without JavaScript. Reduced motion disables entrances and smooth scrolling, including when the preference changes during an animation.
+Motion uses Web Animations and IntersectionObserver with a 110ms hero stagger, 500–610ms durations, and individual, once-only scroll reveals. Content and navigation remain visible without JavaScript. Animations and hover transitions run independently of the system's reduced-motion preference; no motion toggle or saved preference is used.
 
 Set the five values in `CLUB_LINKS` in `scripts.js` when the real Instagram profile, Discord invite, and three registration URLs are available. The existing local destinations and Turkish pending-link announcements remain in use. Event dates, times, and locations remain “Belirlenecek.”
 

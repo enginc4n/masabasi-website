@@ -1,6 +1,6 @@
 # Masabaşı redesign verification
 
-Verified locally on 15 October 2026 at `http://localhost:8765/` using Playwright MCP and the actual HTML/CSS/JavaScript project. No framework build is required.
+Verified locally on 16 October 2026 at `http://localhost:8765/` using Playwright MCP and the actual HTML/CSS/JavaScript project. No framework build is required.
 
 ## Design changes
 
@@ -32,7 +32,7 @@ No console warnings/errors, runtime errors, failed requests, or HTTP error respo
 
 Verified header → eyebrow → heading → description → buttons → image at 0 / 110 / 220 / 330 / 440 / 550ms delays. Durations are 500ms for the header and 610ms for other elements. Entrances use 21px vertical movement, with a restrained 0.99 → 1 scale on the hero image. Benefits and event cards reveal individually with staggered delays. All 31 targets revealed once; repeated rapid scrolling did not replay animations or leave content invisible.
 
-Reduced motion produced no entrance animations and immediately visible content. Changing the preference during an entrance cancelled active animations. With JavaScript disabled at 390 × 844, content and navigation remained visible without overflow.
+Animations run independently of the system's reduced-motion setting. With `prefers-reduced-motion: reduce` enabled, the same six hero entrances retain their 110ms stagger and button transitions remain active. Changing the system preference during an entrance does not cancel it. With JavaScript disabled at 390 × 844, content and navigation remain visible without overflow. No motion preference control is added to the page.
 
 Current screenshots: `redesign-final-{width}.png`, `redesign-final-full-{width}.png`, and `redesign-no-javascript-390.png`. Earlier screenshots remain for historical comparison.
 

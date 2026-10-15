@@ -74,8 +74,7 @@ function initializeNavigation() {
 }
 
 function initializeMotion() {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reducedMotion.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return;
+  if (!('IntersectionObserver' in window) || !Element.prototype.animate) return;
   const active = new Map();
   const seen = new WeakSet();
   let observer;
@@ -87,7 +86,7 @@ function initializeMotion() {
     active.clear();
   };
   const reveal = (element) => {
-    if (seen.has(element) || reducedMotion.matches) return;
+    if (seen.has(element)) return;
     seen.add(element);
     const style = getComputedStyle(element);
     let delay = parseFloat(style.getPropertyValue('--delay')) || 0;
@@ -120,7 +119,6 @@ function initializeMotion() {
       } catch { stop(); }
     }, { threshold: 0, rootMargin: '0px 0px -12px 0px' });
     document.querySelectorAll('[data-entrance], [data-reveal]').forEach((element) => observer.observe(element));
-    reducedMotion.addEventListener('change', (event) => { if (event.matches) stop(); });
     document.addEventListener('focusin', (event) => {
       active.forEach((animation, element) => { if (element.contains(event.target)) animation.cancel(); });
     });

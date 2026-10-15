@@ -99,72 +99,50 @@
         "kind": "header",
         "delay": 0,
         "duration": 500,
-        "observedAt": 42.30000000074506,
+        "observedAt": 53.19999999925494,
         "scale": "1"
       },
       {
         "kind": "eyebrow",
         "delay": 110,
         "duration": 610,
-        "observedAt": 42.69999999925494,
+        "observedAt": 54.099999997764826,
         "scale": "1"
       },
       {
         "kind": "heading",
         "delay": 220,
         "duration": 610,
-        "observedAt": 42.80000000074506,
+        "observedAt": 54.19999999925494,
         "scale": "1"
       },
       {
         "kind": "description",
         "delay": 330,
         "duration": 610,
-        "observedAt": 42.900000002235174,
+        "observedAt": 54.399999998509884,
         "scale": "1"
       },
       {
         "kind": "actions",
         "delay": 440,
         "duration": 610,
-        "observedAt": 42.900000002235174,
+        "observedAt": 54.5,
         "scale": "1"
       },
       {
         "kind": "image",
         "delay": 550,
         "duration": 610,
-        "observedAt": 43,
+        "observedAt": 54.599999997764826,
         "scale": ".99"
       }
-    ]
+    ],
+    "systemPreferenceIgnored": true
   },
   "fallback": {
-    "reducedMotion": true,
-    "preferenceChange": true,
     "noJavaScript": true
   },
   "errors": [],
-  "failedRequests": [],
-  "breakpointSweep": {
-    "widths": [
-      320,
-      360,
-      390,
-      600,
-      601,
-      768,
-      900,
-      901,
-      1024,
-      1100,
-      1101,
-      1280,
-      1440,
-      1920,
-      2560
-    ],
-    "horizontalOverflow": false,
-    "heroHeadingOverflow": false
-  }
+  "failedRequests": []
 }

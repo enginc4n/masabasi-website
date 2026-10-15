@@ -510,8 +510,3 @@ section[id], #etkinlik-listesi { scroll-margin-top: 32px; }
 }
 
 /* Content is visible by default; JS adds only temporary Web Animations. */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-  .button:hover, .social-icon:hover, .event-card:hover, .text-link:hover .arrow, .event-card:hover .event-photo img { transform: none; }
-}

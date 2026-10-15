@@ -147,11 +147,14 @@ async (page) => {
   await page.goto('http://localhost:8765/');
   await page.waitForTimeout(150);
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.waitForFunction(() => document.getAnimations().length === 0, null, { timeout: 3000 });
-  assert(await page.evaluate(() => document.getAnimations().length === 0), 'Changing reduced motion cancels entrances');
+  assert(await page.evaluate(() => document.getAnimations().some((animation) => animation.effect.target.hasAttribute('data-entrance'))), 'Changing the system preference must preserve running entrances');
   await page.goto('http://localhost:8765/');
-  assert(await page.evaluate(() => document.getAnimations().length === 0), 'Reduced motion animations');
-  assert(await page.evaluate(() => [...document.querySelectorAll('[data-entrance], [data-reveal]')].every((element) => getComputedStyle(element).opacity === '1')), 'Reduced motion visibility');
+  await page.waitForTimeout(1800);
+  const reducedSequence = await page.evaluate(() => window.__qa.motion.filter((entry) => ['header', 'eyebrow', 'heading', 'description', 'actions', 'image'].includes(entry.kind)));
+  assert(reducedSequence.map((entry) => entry.kind).join(',') === 'header,eyebrow,heading,description,actions,image', 'Entrances must run with system reduced motion enabled');
+  assert(reducedSequence.every((entry, index) => entry.delay === index * 110), 'System preference must preserve the hero stagger');
+  assert(await page.locator('.hero-actions .button').first().evaluate((element) => getComputedStyle(element).transitionDuration !== '0s'), 'System preference must preserve button transitions');
+  report.motion.systemPreferenceIgnored = true;
   const context = await page.context().browser().newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const noJavaScript = await context.newPage();
   await noJavaScript.goto('http://localhost:8765/');
@@ -160,7 +163,7 @@ async (page) => {
   assert(await noJavaScript.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No JavaScript overflow');
   await noJavaScript.screenshot({ path: 'validation/redesign-no-javascript-390.png' });
   await context.close();
-  report.fallback = { reducedMotion: true, preferenceChange: true, noJavaScript: true };
+  report.fallback = { noJavaScript: true };
   report.errors = errors;
   report.failedRequests = failedRequests;
   assert(errors.length === 0, `Browser console: ${errors.join('; ')}`);
