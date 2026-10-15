@@ -1,0 +1,170 @@
+{
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "containerWidth": 1312,
+      "containerAligned": true,
+      "headingContained": true,
+      "heroImageInset": true,
+      "heroColumns": "536.625px 711.375px",
+      "benefitColumns": "328px 328px 328px 328px",
+      "eventColumns": "421.328px 421.328px 421.344px",
+      "imagesLoaded": true,
+      "hiddenReveals": 0,
+      "reveals": 31,
+      "targets": 31,
+      "layoutShift": 0
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "containerWidth": 944,
+      "containerAligned": true,
+      "headingContained": true,
+      "heroImageInset": true,
+      "heroColumns": "392.156px 519.844px",
+      "benefitColumns": "472px 472px",
+      "eventColumns": "301.328px 301.328px 301.344px",
+      "imagesLoaded": true,
+      "hiddenReveals": 0,
+      "reveals": 31,
+      "targets": 31,
+      "layoutShift": 0
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "containerWidth": 704,
+      "containerAligned": true,
+      "headingContained": true,
+      "heroImageInset": true,
+      "heroColumns": "704px",
+      "benefitColumns": "352px 352px",
+      "eventColumns": "340px 340px",
+      "imagesLoaded": true,
+      "hiddenReveals": 0,
+      "reveals": 31,
+      "targets": 31,
+      "layoutShift": 0
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "containerWidth": 350,
+      "containerAligned": true,
+      "headingContained": true,
+      "heroImageInset": true,
+      "heroColumns": "350px",
+      "benefitColumns": "350px",
+      "eventColumns": "350px",
+      "imagesLoaded": true,
+      "hiddenReveals": 0,
+      "reveals": 31,
+      "targets": 31,
+      "layoutShift": 0
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "containerWidth": 1312,
+      "containerAligned": true,
+      "headingContained": true,
+      "heroImageInset": true,
+      "heroColumns": "536.625px 711.375px",
+      "benefitColumns": "328px 328px 328px 328px",
+      "eventColumns": "421.328px 421.328px 421.344px",
+      "imagesLoaded": true,
+      "hiddenReveals": 0,
+      "reveals": 31,
+      "targets": 31,
+      "layoutShift": 0
+    }
+  ],
+  "interactions": [
+    "Desktop navigation, hero CTA, all events, 3 event CTAs, membership, Instagram, Discord, keyboard skip link",
+    "Mobile menu, ARIA, keyboard selection, Escape, focus restoration, outside click, resize"
+  ],
+  "motion": {
+    "once": true,
+    "fastScroll": true,
+    "revealCount": 31,
+    "entranceSequence": [
+      {
+        "kind": "header",
+        "delay": 0,
+        "duration": 500,
+        "observedAt": 42.30000000074506,
+        "scale": "1"
+      },
+      {
+        "kind": "eyebrow",
+        "delay": 110,
+        "duration": 610,
+        "observedAt": 42.69999999925494,
+        "scale": "1"
+      },
+      {
+        "kind": "heading",
+        "delay": 220,
+        "duration": 610,
+        "observedAt": 42.80000000074506,
+        "scale": "1"
+      },
+      {
+        "kind": "description",
+        "delay": 330,
+        "duration": 610,
+        "observedAt": 42.900000002235174,
+        "scale": "1"
+      },
+      {
+        "kind": "actions",
+        "delay": 440,
+        "duration": 610,
+        "observedAt": 42.900000002235174,
+        "scale": "1"
+      },
+      {
+        "kind": "image",
+        "delay": 550,
+        "duration": 610,
+        "observedAt": 43,
+        "scale": ".99"
+      }
+    ]
+  },
+  "fallback": {
+    "reducedMotion": true,
+    "preferenceChange": true,
+    "noJavaScript": true
+  },
+  "errors": [],
+  "failedRequests": [],
+  "breakpointSweep": {
+    "widths": [
+      320,
+      360,
+      390,
+      600,
+      601,
+      768,
+      900,
+      901,
+      1024,
+      1100,
+      1101,
+      1280,
+      1440,
+      1920,
+      2560
+    ],
+    "horizontalOverflow": false,
+    "heroHeadingOverflow": false
+  }
+}

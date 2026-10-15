@@ -1,0 +1,21 @@
+# Local editor and browser artifacts
+.od-frames/
+.od-skills/
+.playwright-mcp/
+*.artifact.json
+validation/*.png
+validation/*.jpg
+validation/*.webp
+
+# Generated site and local dependencies
+_site/
+dist/
+node_modules/
+
+# Local configuration and OS files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
